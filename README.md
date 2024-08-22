@@ -14,3 +14,19 @@ let's say you want to know the width of a web page or an element on the web page
 Simply put, if you want to transfer date from one piece of software to another without the need of a gui, you can use a headless browser to do that.
 And this is the main reason why we use headless browser to scrape the web with puppeteer.
 
+
+
+we can use puppeteer to either launch a new browser instance or connect to an existing one.
+
+
+page interaction:
+1. allows to interact with the elements using mouse, keyboard inputs, and touch events.
+ - find and element --->  perfrom an action on the element
+
+2. It has locators
+- the best way to select an element and interact with it.
+- allows for puppeteer to automatically wait for the element to be present in the dom in the right state before an action 
+- you can initiate a locator using page.locator() or frame.locator
+
+--- note
+if the locator api does not offer you the functionality I need, I can use the `page.waitForSelector()` or `ElementHandle`

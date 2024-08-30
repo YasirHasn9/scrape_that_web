@@ -3,9 +3,11 @@
 
 import { locator } from "./pageInteraction/locator"
 import { waitForSelector } from "./pageInteraction/waitForSelector"
+import { fullPageScreenShot } from "./pageInteraction/screenShot"
 
 (async () => {
     /** Page Interaction **/
     // locator()
-    waitForSelector()
+    // waitForSelector()
+    fullPageScreenShot()
 })()

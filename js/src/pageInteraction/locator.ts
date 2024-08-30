@@ -37,4 +37,39 @@ export const locator = async () => {
     // and TimeoutError will be thrown if the element is not found
     await page.locator('button').setTimeout(1000).click()
 
+
+    // Log important information
+    console.log('Browser launched:', browser);
+    console.log('Page created:', page);
+    console.log('Current URL:', await page.url());
+    console.log('Page title:', await page.title());
+
+    // // Log information about the search input
+    // const inputSearchBoundingBox = await inputSearch.boundingBox();
+    // console.log('Search input bounding box:', inputSearchBoundingBox);
+
+    // // Log the number of buttons on the page
+    // const buttonCount = await page.locator('button').count();
+    // console.log('Number of buttons on the page:', buttonCount);
+
+    // Log the current page content
+    const pageContent = await page.content();
+    console.log('Page content:', pageContent);
+
+    // Log any console messages from the page
+    page.on('console', msg => console.log('Page log:', msg.text()));
+
+    // Log any errors that occur
+    page.on('pageerror', error => console.error('Page error:', error));
+
+    // Log when navigation is complete
+    page.on('load', () => console.log('Page loaded'));
+
+    // Log performance metrics
+    const metrics = await page.metrics();
+    console.log('Page metrics:', metrics);
+
+    // Log cookies
+    const cookies = await page.cookies();
+    console.log('Cookies:', cookies);
 }
